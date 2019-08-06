@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/question.dart';
 import './question.dart';
+import './answer.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -36,7 +38,7 @@ class MyApp extends StatefulWidget {
   Widget build(BuildContext context) {
     var questions = [
       'What\'s your favorite colour?',
-      'What\'s your favorite animatl?',
+      'What\'s your favorite animal?',
     ];
     return MaterialApp(
       home: Scaffold(
@@ -47,24 +49,10 @@ class MyApp extends StatefulWidget {
           Question(
             questions[questionIndex],
           ),
-          RaisedButton(
-            child: Text('Answer 1'), 
-            onPressed: answerQuestion,
-          ),
-          RaisedButton(
-            child: Text('Answer 2'),
-            onPressed: () => print('Answer 2 chosen!'),
-          ),
-          RaisedButton(
-            child: Text('Answer 3'),
-            onPressed:(){
-              print('Answer 3 chosen');
-            }
-          ),
-          RaisedButton(
-          child: Text('Reset'),
-          onPressed: reset,
-          )
+          Answer(_answerQuestion),
+          Answer(_answerQuestion),
+          Answer(_answerQuestion)
+         
         ]),
       ),
     );

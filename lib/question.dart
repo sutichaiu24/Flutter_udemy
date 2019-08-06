@@ -4,11 +4,17 @@ class Question extends StatelessWidget {
   String questionText ;
   Question(this.questionText){
 
-    test 
-
   }
   @override
   Widget build(BuildContext context) {
-    return Text(questionText); 
+    return  Container(
+      width: double.infinity,
+      margin: EdgeInsets.all(33),
+      child: Text(
+        questionText,
+        style: TextStyle(fontSize: 10),
+        textAlign: TextAlign.center,
+        ),
+    ); 
   }
 }
